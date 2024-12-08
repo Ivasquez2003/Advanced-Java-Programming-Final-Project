@@ -13,13 +13,13 @@ Dr. Pamela Thompson (instructor)<br>
   Database login for project:<br>
   <img src="loginView.png"><br>
   main form: <br>
-  <img src= "mainView.png"><br>
+  <img src= "MainView.png"><br>
   customer table:<br>
   <img src= "customerTable.png"><br>
   adding a customer:<br>
   <img src= "addCustView.png"><br>
   editing a customer <br>
-  <img src= "editCustView.png"><br>
+  <img src= "editCustVIew.png"><br>
 </p>
 <br>
 
