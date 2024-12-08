@@ -11,7 +11,7 @@ Dr. Pamela Thompson (instructor)<br>
 ## Project Features
 <p>Screenshots and explanation of code to include database EERD and GUI screenshots, plus some codeMbr>
   Main menu for project:<br>
-  <img src="screen1.png"><br>
+  <img src="loginView.png"><br>
 
 </p>
 <br>
