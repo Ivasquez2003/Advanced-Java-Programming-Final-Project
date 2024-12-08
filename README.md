@@ -25,7 +25,7 @@ Dr. Pamela Thompson (instructor)<br>
   actor table: <br>
   <img src= "actorTable.png"><br>
   adding actor:<br>
-  <img src= "addActorView.png"><br>
+  <img src= "addNewActorView.png"><br>
   editing actor:<br>
   <img src= "editactorview.png"><br>
   deleting actor:<br>
