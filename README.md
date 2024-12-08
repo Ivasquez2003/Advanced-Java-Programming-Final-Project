@@ -16,7 +16,10 @@ Dr. Pamela Thompson (instructor)<br>
   <img src= "mainView.png><br>
   customer table:<br>
   <img src= "customerTable.png><br>
-
+  adding a customer:<br>
+  <img src= "addCustView.png><br>
+  editing a customer <br>
+  <img src= "editCustView.png><br>
 </p>
 <br>
 
