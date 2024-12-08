@@ -4,6 +4,14 @@
  */
 package com.mycompany.customermanagementsystem;
 
+/**
+ *Login form requests a username and password. Once correctly entered, the main form 
+ * comes up and allows for user selection.
+ * 
+ * @author Isis Vasquez
+ * Date Completed: 12/06/2024
+ */
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

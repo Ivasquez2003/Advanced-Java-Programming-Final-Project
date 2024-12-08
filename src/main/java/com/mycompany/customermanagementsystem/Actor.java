@@ -5,21 +5,19 @@
 package com.mycompany.customermanagementsystem;
 
 /**
- *includes getter and setter methods for accessing and modifying the properties 
- *in the customer table.
+ * provides actor properties with getter and setter methods to access and modify these properties.
  * 
  * @author Isis Vasquez
  * Date Completed: 12/06/2024
  */
 
-public class Customer {
+public class Actor {
     private int id;
     private String firstName;
     private String lastName;
-    private String email;
 
     // Constructor, getters, and setters
-    public Customer() {}
+    public Actor() {}
 
     public int getId() {
         return id;
@@ -43,13 +41,5 @@ public class Customer {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 }

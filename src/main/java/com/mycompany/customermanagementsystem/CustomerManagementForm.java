@@ -1,5 +1,13 @@
 package com.mycompany.customermanagementsystem;
 
+/**
+ *allows users to manage customer data by adding, editing, and deleting customer
+ * records using a table view.
+ * 
+ * @author Isis Vasquez
+ * Date Completed: 12/06/2024
+ */
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;

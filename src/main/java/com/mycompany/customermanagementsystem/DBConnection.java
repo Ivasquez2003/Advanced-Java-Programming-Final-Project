@@ -4,6 +4,14 @@
  */
 package com.mycompany.customermanagementsystem;
 
+/**
+ *Establishes connection to a database and the password accepted to connect to said
+ * database.
+ * 
+ * @author Isis Vasquez
+ * Date Completed: 12/06/2024
+ */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;

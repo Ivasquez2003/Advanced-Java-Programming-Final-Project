@@ -5,8 +5,12 @@
 package com.mycompany.customermanagementsystem;
 
 /**
- *
- * @author ijyna
+ *Form with buttons customer, actor, reports, and exit. The exit button works to close the program
+ * the customers button opens up a customer table that is interactive. The Actors button 
+ * opens an actor table that is interactive. Both are connected to a SQL Database with a list of information
+ * 
+ * @author Isis Vasquez
+ * Date Completed: 12/06/2024
  */
 public class TestForm extends javax.swing.JFrame {
 
@@ -41,7 +45,12 @@ public class TestForm extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Actions");
+        jButton2.setText("Actor");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Reports");
 
@@ -105,6 +114,12 @@ public class TestForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        new ActorManagementForm().setVisible(true); //this brings up the Actor db table
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

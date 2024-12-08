@@ -5,8 +5,8 @@
 package com.mycompany.customermanagementsystem;
 
 /**
- *provides methods for interacting with the 'customer' table in the database.
- * It allows CRUD (Create, Read, Update, Delete) operations on customer records.
+ * Provides methods for interacting with the 'actor' table in the database.
+ * It supports CRUD (Create, Read, Update, Delete) operations for managing actor records
  * 
  * @author Isis Vasquez
  * Date Completed: 12/06/2024
@@ -16,56 +16,53 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomerDAO {
-    public List<Customer> getAllCustomers() {
-        List<Customer> customers = new ArrayList<>();
+public class ActorDAO {
+    public List<Actor> getAllActors() {
+        List<Actor> actors = new ArrayList<>();
         try (Connection conn = DBConnection.getConnection()) {
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM customer");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM actor");
             while (rs.next()) {
-                Customer customer = new Customer();
-                customer.setId(rs.getInt("customer_id"));
-                customer.setFirstName(rs.getString("first_name"));
-                customer.setLastName(rs.getString("last_name"));
-                customer.setEmail(rs.getString("email"));
-                customers.add(customer);
+                Actor actor = new Actor();
+                actor.setId(rs.getInt("actor_id"));
+                actor.setFirstName(rs.getString("first_name"));
+                actor.setLastName(rs.getString("last_name"));
+                actors.add(actor);
             }
         } catch (SQLException e) {
            // System.out.println("Error in connection");
            System.out.println(e);
         }
-        return customers;
+        return actors;
     }
 
-    public void addCustomer(Customer customer) {
-        String query = "INSERT INTO customer (first_name, last_name, email) VALUES (?, ?, ?)";
+    public void addActor(Actor actor) {
+        String query = "INSERT INTO actor (first_name, last_name) VALUES (?, ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, customer.getFirstName());
-            stmt.setString(2, customer.getLastName());
-            stmt.setString(3, customer.getEmail());
+            stmt.setString(1, actor.getFirstName());
+            stmt.setString(2, actor.getLastName());
             stmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Connection error");
         }
     }
 
-    public void updateCustomer(Customer customer) {
-        String query = "UPDATE customer SET first_name = ?, last_name = ?, email = ? WHERE customer_id = ?";
+    public void updateActor(Actor actor) {
+        String query = "UPDATE actor SET first_name = ?, last_name = ? WHERE actor_id = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
-            stmt.setString(1, customer.getFirstName());
-            stmt.setString(2, customer.getLastName());
-            stmt.setString(3, customer.getEmail());
-            stmt.setInt(4, customer.getId());
+            stmt.setString(1, actor.getFirstName());
+            stmt.setString(2, actor.getLastName());
+            stmt.setInt(3, actor.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println("Error in connection");
         }
     }
 
-    public void deleteCustomer(int id) {
-        String query = "DELETE FROM customer WHERE customer_id = ?";
+    public void deleteActor(int id) {
+        String query = "DELETE FROM actor WHERE actor_id = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, id);
@@ -74,4 +71,5 @@ public class CustomerDAO {
             System.out.println("Error in connection");
         }
     }
+    
 }

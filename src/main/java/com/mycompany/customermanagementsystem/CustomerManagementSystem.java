@@ -5,9 +5,12 @@
 package com.mycompany.customermanagementsystem;
 
 /**
- *
- * @author PTHOMPSO
+ *Main class that creates a new login form when ran
+ * 
+ * @author Isis Vasquez
+ * Date Completed: 12/06/2024
  */
+
 public class CustomerManagementSystem {
 
     public static void main(String[] args) {
