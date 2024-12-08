@@ -18,8 +18,18 @@ Dr. Pamela Thompson (instructor)<br>
   <img src= "customerTable.png"><br>
   adding a customer:<br>
   <img src= "addCustView.png"><br>
-  editing a customer <br>
+  editing a customer: <br>
   <img src= "editCustVIew.png"><br>
+  deleting a customer: <br>
+  <img src= "deleteCustView.png"><br>
+  actor table: <br>
+  <img src= "actorTable.png"><br>
+  adding actor:<br>
+  <img src= "addActorView.png"><br>
+  editing actor:<br>
+  <img src= "editactorview.png"><br>
+  deleting actor:<br>
+  <img src= "deleteActorView.png"><br>
 </p>
 <br>
 
