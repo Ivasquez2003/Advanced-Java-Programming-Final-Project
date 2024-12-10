@@ -1,6 +1,6 @@
 # Advanced-Java-Programming-Final-Project
 ## Author
-Pamela Thompson<br>
+Isis Vasquez<br>
 Catawba College<br>
 CIS 3400 Advanced Programming, Fall 2024<br>
 Dr. Pamela Thompson (instructor)<br>
