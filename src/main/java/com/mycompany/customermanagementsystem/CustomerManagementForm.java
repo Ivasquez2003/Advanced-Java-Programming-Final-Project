@@ -14,6 +14,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import java.sql.*;
 
 public class CustomerManagementForm extends JFrame {
     private JTable customerTable;
@@ -184,9 +185,13 @@ private void editCustomer() {
         int customerId = (int) tableModel.getValueAt(selectedRow, 0);
         int confirmation = JOptionPane.showConfirmDialog(this, "Are you sure you want to delete this customer?", "Confirm Delete", JOptionPane.YES_NO_OPTION);
         
-        if (confirmation == JOptionPane.YES_OPTION) {
-            customerDAO.deleteCustomer(customerId);
-            JOptionPane.showMessageDialog(this, "Customer deleted successfully!");
+        if (confirmation == JOptionPane.YES_OPTION) {         
+            try{
+                customerDAO.deleteCustomer(customerId);
+                JOptionPane.showMessageDialog(this, "Customer deleted successfully!");
+            } catch(SQLException e) {
+                JOptionPane.showMessageDialog(this, "Error deleting customer: " + e.getMessage(), "Deletion Failed", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
     

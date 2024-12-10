@@ -31,8 +31,7 @@ public class CustomerDAO {
                 customers.add(customer);
             }
         } catch (SQLException e) {
-           // System.out.println("Error in connection");
-           System.out.println(e);
+           System.out.println("Error retrieving customers: " + e.getMessage());
         }
         return customers;
     }
@@ -46,7 +45,7 @@ public class CustomerDAO {
             stmt.setString(3, customer.getEmail());
             stmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Connection error");
+            System.out.println("Error adding customer: " + e.getMessage());
         }
     }
 
@@ -60,18 +59,24 @@ public class CustomerDAO {
             stmt.setInt(4, customer.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error in connection");
+            System.out.println("Error updating customer: " + e.getMessage());
         }
     }
 
-    public void deleteCustomer(int id) {
+    public void deleteCustomer(int id) throws SQLException  {
         String query = "DELETE FROM customer WHERE customer_id = ?";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setInt(1, id);
+            
             stmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error in connection");
+            if (e.getSQLState().equals("23000")) {
+            System.out.println("Deleted a rec with a foreign key reference");
+            }
+            else {
+            System.out.println("Error executing delete operation: " + e.getMessage());
+            }
         }
     }
 }

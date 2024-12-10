@@ -30,8 +30,7 @@ public class ActorDAO {
                 actors.add(actor);
             }
         } catch (SQLException e) {
-           // System.out.println("Error in connection");
-           System.out.println(e);
+           System.out.println("Error retrieving actors: " + e.getMessage());
         }
         return actors;
     }
@@ -44,7 +43,7 @@ public class ActorDAO {
             stmt.setString(2, actor.getLastName());
             stmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Connection error");
+            System.out.println("Error adding actor: " + e.getMessage());
         }
     }
 
@@ -57,7 +56,7 @@ public class ActorDAO {
             stmt.setInt(3, actor.getId());
             stmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error in connection");
+            System.out.println("Error updating actor: " + e.getMessage());
         }
     }
 
@@ -68,7 +67,12 @@ public class ActorDAO {
             stmt.setInt(1, id);
             stmt.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("Error in connection");
+            if (e.getSQLState().equals("23000")) {
+            System.out.println("Deleted a rec with a foreign key reference");
+            }
+            else {
+            System.out.println("Error executing delete operation: " + e.getMessage());
+            }
         }
     }
     
